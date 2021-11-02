@@ -1,0 +1,106 @@
+EffÉcran
+{13}
+prgmTEXTLIB
+10→A
+9→C
+8→E
+7→F
+6→G
+5→L
+nbrAléatEnt(5,21)→H
+{13}
+H→I
+H→J
+H→S
+S+2→S
+J+2→J
+I+1→I
+prgmTEXTLIB
+"***"→Chn2
+"*****"→Chn3
+"***"→Chn4
+"-"→Chn5
+"-"→Chn6
+nbrAléatEnt(3,26)→D
+nbrAléatEnt(1,6)→B
+B→L₁(1)
+nbrAléatEnt(6,12)→B
+B→L₁(2)
+nbrAléatEnt(12,18)→B
+B→L₁(3)
+nbrAléatEnt(18,26)→B
+"                              "→Chn1
+
+EffÉcran
+{13}
+prgmTEXTLIB
+Output(10,1,"                          
+Output(A,B,"=
+Output(A,L₁(1),"=
+Output(A,L₁(2),"=
+Output(A,L₁(3),"=
+Output(C,J,Chn6
+Output(C,D,Chn1
+Output(L,I,Chn2
+Output(G,H,Chn3
+Output(F,I,Chn4
+Output(E,S,Chn5
+D-1→D
+J-1→J
+2→U:1→V
+{3}
+prgmTEXTLIB
+Lbl 1
+Output(U,V,"Ω
+If U≠9
+Then
+Output(U-1,V," 
+Output(1,1," 
+Wait 0.4
+U+1→U
+Goto 1
+Else
+Output(U-1,V," 
+While 1
+getKey→K
+Output(U,V,"Ω
+If K=26 et V<D et V<J
+V+1→V
+If K=26 et V>1
+Output(U,V-1," 
+If K=24 et V=D
+V-1→V
+If K=24 et V≠D et V>1
+V-1→V
+If K=24 et V≠D et V>1
+Output(U,V+1," 
+If K=24
+Output(U,V+1," 
+If K=21 et V=J
+Then
+{3}
+prgmTEXTLIB
+Output(U,V+1," 
+26→J
+1→C
+Else
+End
+If K=25 et V≠S
+U-1→U
+If K=25 et V≠S
+Output(U+1,V," 
+If K=25 et V≠S
+Then
+Output(U,V,"Ω
+Wait 0.5
+U+1→U
+Output(U-1,V," 
+Else
+End
+If K=21 et V=D
+Then
+Output(U,V+1," 
+D+1→D
+Else
+End
+End
