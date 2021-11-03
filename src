@@ -76,7 +76,7 @@ If K=24 et V≠D et V>1
 Output(U,V+1," 
 If K=24
 Output(U,V+1," 
-If K=21 et V=J
+If K=21 et V=J et V≠26
 Then
 {3}
 prgmTEXTLIB
@@ -97,7 +97,7 @@ U+1→U
 Output(U-1,V," 
 Else
 End
-If K=21 et V=D
+If K=21 et V=D et V≠26
 Then
 Output(U,V+1," 
 D+1→D
