@@ -32,19 +32,29 @@ nbrAléatEnt(18,26)→B
 "                              "→Chn1
 
 EffÉcran
-{13}
+{13,14}
+prgmTEXTLIB
+{16,GRIS MOY}
 prgmTEXTLIB
 Output(10,1,"                          
 Output(A,B,"=
 Output(A,L₁(1),"=
 Output(A,L₁(2),"=
 Output(A,L₁(3),"=
+{16,MARRON}
+prgmTEXTLIB
 Output(C,J,Chn6
+{16,VERT}
+prgmTEXTLIB
 Output(C,D,Chn1
 Output(L,I,Chn2
 Output(G,H,Chn3
 Output(F,I,Chn4
+{16,MARRON}
+prgmTEXTLIB
 Output(E,S,Chn5
+{16,NOIR
+prgmTEXTLIB
 D-1→D
 J-1→J
 2→U:1→V
