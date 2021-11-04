@@ -53,8 +53,9 @@ Output(F,I,Chn4
 {16,MARRON}
 prgmTEXTLIB
 Output(E,S,Chn5
-{16,NOIR
+{16,NOIR}
 prgmTEXTLIB
+0→M
 D-1→D
 J-1→J
 2→U:1→V
@@ -96,13 +97,18 @@ Output(U,V+1,"
 Else
 End
 If K=25 et V≠S
+Then
+If M=0
+Then
 U-1→U
+End
+End
 If K=25 et V≠S
 Output(U+1,V," 
 If K=25 et V≠S
 Then
 Output(U,V,"Ω
-Wait 0.5
+Wait 0.4
 U+1→U
 Output(U-1,V," 
 Else
@@ -112,6 +118,5 @@ Then
 Output(U,V+1," 
 D+1→D
 Else
-End
 End
 End
