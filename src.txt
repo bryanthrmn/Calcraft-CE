@@ -1,0 +1,122 @@
+ClrHome
+{13}
+prgmTEXTLIB
+10->A
+9->C
+8->E
+7->F
+6->G
+5->L
+randInt(5,21)->H
+{13}
+H->I
+H->J
+H->S
+S+2->S
+J+2->J
+I+1->I
+prgmTEXTLIB
+"***"->Str2
+"*****"->Str3
+"***"->Str4
+"-"->Str5
+"-"->Str6
+randInt(3,26)->D
+randInt(1,6)->B
+B->L1(1)
+randInt(6,12)->B
+B->L1(2)
+randInt(12,18)->B
+B->L1(3)
+randInt(18,26)->B
+"                              "->Str1
+
+ClrHome
+{13,14}
+prgmTEXTLIB
+{16,MedGray}
+prgmTEXTLIB
+Output(10,1,"                          
+Output(A,B,"=
+Output(A,L1(1),"=
+Output(A,L1(2),"=
+Output(A,L1(3),"=
+{16,Brown}
+prgmTEXTLIB
+Output(C,J,Str6
+{16,Green}
+prgmTEXTLIB
+Output(C,D,Str1
+Output(L,I,Str2
+Output(G,H,Str3
+Output(F,I,Str4
+{16,Brown}
+prgmTEXTLIB
+Output(E,S,Str5
+{16,Black}
+prgmTEXTLIB
+0->M
+D-1->D
+J-1->J
+2->U:1->V
+{3}
+prgmTEXTLIB
+Lbl 1
+Output(U,V,"Omega
+If U!=9
+Then
+	Output(U-1,V," 
+	Output(1,1," 
+	Wait 0.4
+	U+1->U
+	Goto 1
+Else
+	Output(U-1,V," 
+	While 1
+		getKey->K
+		Output(U,V,"Omega
+		If K=26 and V<D and V<J
+		V+1->V
+		If K=26 and V>1
+		Output(U,V-1," 
+		If K=24 and V=D
+		V-1->V
+		If K=24 and V!=D and V>1
+		V-1->V
+		If K=24 and V!=D and V>1
+		Output(U,V+1," 
+		If K=24
+		Output(U,V+1," 
+		If K=21 and V=J and V!=26
+		Then
+			{3}
+			prgmTEXTLIB
+			Output(U,V+1," 
+			26->J
+			1->C
+		Else
+		End
+		If K=25 and V!=S
+		Then
+			If M=0
+			Then
+				U-1->U
+			End
+		End
+		If K=25 and V!=S
+		Output(U+1,V," 
+		If K=25 and V!=S
+		Then
+			Output(U,V,"Omega
+			Wait 0.4
+			U+1->U
+			Output(U-1,V," 
+		Else
+		End
+		If K=21 and V=D and V!=26
+		Then
+			Output(U,V+1," 
+			D+1->D
+		Else
+		End
+	End
