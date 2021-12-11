@@ -39,7 +39,7 @@ The latest OS of the TI-83 Premium CE is 5.7.0.
 
 
 ## Reporting a Vulnerability
-							-Calcraft CE- (v.1.0)
+							-Calcraft CE- (v.1.6)
 
 By members on https://tiplanet.org
 
