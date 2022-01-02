@@ -1,90 +1,121 @@
 :DCS
-"888888888888CBBB888888888888CCBB8888888888888CCC8855888888888888855558888888888855555588888888885555558888888888857758888888888888778888888888888877888888888888887788888888888855555558888886887777777888888988777777755555555577777777777777777777777777777777"
+"888888888888CBBB888888888888CCBB8888888888888CCC88558888888888888555588888888888555555888888888855555588888888888577588888888888887788888888888888778888888888888877888888888888555555588888868855555558888889887777777555555555CCCCCC7777777777DCCECCDCCCCCCFCC"
 0→W
-0→X
+1→X
 Goto 7
 Lbl 9
 EffÉcran
-Output(3,1,"Survie 
-Output(6,1,"Normal
+If W=0:Output(3,1,"Survie 
+If W=1:Output(3,1,"Créatif
+If X=0:Output(6,1,"Plat  
+If X=1:Output(6,1,"Normal
+Goto 10
 Lbl 10
+Output(2,1,"[1]Mode:
+Output(5,1,"[2]Monde:
 getKey→K
-If K=105
-Goto 7
+If K=105:Goto 7
 If K=92 et W=1
 Then
 0→W
 Output(3,1,"Survie 
 Goto 10
-Else
+End
 If K=92 et W=0
 Then
 1→W
 Output(3,1,"Créatif
 Goto 10
-Else
-Output(2,1,"[1]Mode:
-Output(5,1,"[2]Monde:
+End
 If K=93 et X=1
 Then
 Output(6,1,"Plat  
 0→X
 Goto 10
-Else
+End
 If K=93 et X=0
 Then
 Output(6,1,"Normal
 1→X
 Goto 10
-Else
+End
 Goto 10
 Lbl 7
 EffÉcran
-Wait 0.1
+Wait 0.0
 Output(1,13,"▫
 Output(2,13,"▫
-Wait 0.1
+Wait 0.0
 Output(1,13,"▫
 Output(2,13,"I
 Output(3,13,"▫
-Wait 0.1
-Output(1,12,"▫-▫
-Output(2,12,"IMI
-Output(3,12,"▫-▫
-Wait 0.1
-Output(1,11,"▫---▫
-Output(2,11,"IMINI
-Output(3,11,"▫---▫
-Wait 0.1
-Output(1,10,"▫-----▫
-Output(2,10,"IMINECI
-Output(3,10,"▫-----▫
-Wait 0.1
-Output(1,9,"▫-------▫
-Output(2,9,"IMINECRAI
-Output(3,9,"▫-------▫
-Wait 0.1
-Output(1,8,"▫---------▫
-Output(2,8,"IMINECRAFTI
-Output(3,8,"▫---------▫
-Wait 0.1
+Wait 0.0
+Output(1,12,"▫---▫
+Output(2,12,"I M I
+Output(3,12,"▫---▫
+Wait 0.0
+Output(1,11,"▫-----▫
+Output(2,11,"I MIN I
+Output(3,11,"▫-----▫
+Wait 0.0
+Output(1,10,"▫-------▫
+Output(2,10,"I MINEC I
+Output(3,10,"▫-------▫
+Wait 0.0
+Output(1,9,"▫---------▫
+Output(2,9,"I MINECRA I
+Output(3,9,"▫---------▫
+Wait 0.0
+Output(1,8,"▫-----------▫
+Output(2,8,"I MINECRAFT I
+Output(3,8,"▫-----------▫
+Wait 0.0
 Output(5,8,"[1]Monde solo
-Wait 0.1
+Wait 0.0
 Output(6,8,"[2]Nouvelle map
-Wait 0.1
+Wait 0.0
 Output(7,8,"[3]Options
-Wait 0.1
-Output(10,23,"V1.6
-Wait 0.1
-Output(9,1,"By
-Wait 0.1
-Output(10,1,"Capysquid
+Wait 0.0
+Output(8,8,"[4]Quitter
+Wait 0.0
+Output(10,1,"par...
+Wait 0.0
+Output(10,23,"V1.7
 Lbl 8
 getKey→K
-If K=92
-Goto WB
-If K=94
-Goto 9
+If K=92:Goto WB
+If K=82
+Then
+EffÉcran
+Stop
+End
+If K=94:Goto 9
+If K=15
+Then
+EffÉcran
+Output(1,1,"V1.7 
+Output(3,1,"Correction de bug                                  Rajout de couleur                                   Amelioration du menu"
+Output(10,1,"Annul pour quitter
+While K≠45
+getKey→K
+End
+Goto 7
+End
+If K=11
+Then
+EffÉcran
+Output(1,1,"Calcraft CE               
+Output(2,1,"par
+Output(4,1,"Capysquid
+Output(5,1,"Shadow
+Output(6,1,"Oh11115
+Output(9,1,"www.ticraft.be.ma
+Output(10,1,"Annul pour quitter
+While K≠45
+getKey→K
+End
+Goto 7
+End
 Goto 8
 Lbl WB
 EffÉcran
@@ -103,14 +134,10 @@ Output(7,3,"I I I I
 Output(8,3,"+-+-+-+
 Lbl 4
 getKey→K
-If θ<­3
-3→θ
-If θ>3
-­3→θ
-If K=26
-θ+1→θ
-If K=24
-θ-1→θ
+If θ<­3:3→θ
+If θ>3:­3→θ
+If K=26:θ+1→θ
+If K=24:θ-1→θ
 If K=24 ou K=26
 Then
 EffÉcran
@@ -211,26 +238,21 @@ Goto 4
 Else
 Goto 4
 Lbl 3
-{13}
-prgmTEXTLIB
-If X=0
-Goto WX
-If X=1
-10→A
+{1,2,3,4}:prgmTEXTLIB
+If X=0:Goto WX
+If X=1:10→A
 9→C
 8→E
 7→F
 6→G
 5→L
 nbrAléatEnt(5,21)→H
-{13}
 H→I
 H→J
 H→S
 S+2→S
 J+2→J
 I+1→I
-prgmTEXTLIB
 "***"→Chn2
 "*****"→Chn3
 "***"→Chn4
@@ -247,80 +269,70 @@ nbrAléatEnt(18,26)→B
 "                              "→Chn1
 
 EffÉcran
-{13}
-prgmTEXTLIB
+{14,17,GRIS CLR}:prgmTEXTLIB
 Output(10,1,"                          
+{14,17,GRIS}:prgmTEXTLIB
 Output(A,B,"=
 Output(A,L₁(1),"=
 Output(A,L₁(2),"=
 Output(A,L₁(3),"=
+{14,17,MARRON}:prgmTEXTLIB
 Output(C,J,Chn6
+{14,17,VERT}:prgmTEXTLIB
 Output(C,D,Chn1
 Output(L,I,Chn2
 Output(G,H,Chn3
 Output(F,I,Chn4
+{14,17,MARRON}:prgmTEXTLIB
 Output(E,S,Chn5
+{1,2,3,4}:prgmTEXTLIB
 D-1→D
 J-1→J
 Lbl WX
-9→U:1→V
-{13}
-prgmTEXTLIB
-Output(10,1,"                          
-While 1
-If X=1
+If X=0
 Then
-DelVar C
-DelVar D
-DelVar L
-DelVar H
-DelVar J
-Else
+{14,17,VERT}:prgmTEXTLIB
+Output(10,1,"                          
+26→D
 End
+9→U:1→V
+{1,2,3,4}:prgmTEXTLIB
+While 1
 getKey→K
-{3}
-prgmTEXTLIB
+{1,2,3,4}:prgmTEXTLIB
 Output(U,V,"Ω
-If K=26 et V<D et V<J
-V+1→V
-If K=26 et V>1
-Output(U,V-1," 
-If K=24 et V=D
-V-1→V
-If K=24 et V≠D et V>1
-V-1→V
-If K=24 et V≠D et V>1
-Output(U,V+1," 
-If K=24
-Output(U,V+1," 
-If K=21 et V=J
+If K=45
+Then
+EffÉcran
+Stop
+End
+If K=26 et V<D et V<J:V+1→V
+If K=26 et V>1:Output(U,V-1," 
+If K=24 et V>1:V-1→V
+If K=24 et V>1:Output(U,V+1," 
+If K=24:Output(U,V+1," 
+If K=21 et V=J et V≠26
 Then
 {3}
 prgmTEXTLIB
 Output(U,V+1," 
 26→J
 1→C
-Else
 End
-If K=25 et V≠S
-U-1→U
-If K=25 et V≠S
-Output(U+1,V," 
+If K=25 et V≠S:U-1→U
+If K=25 et V≠S:Output(U+1,V," 
 If K=25 et V≠S
 Then
 Output(U,V,"Ω
 Wait 0.5
 U+1→U
 Output(U-1,V," 
-Else
 End
-If K=21 et V=D
+If K=21 et V=D et V≠26
 Then
 Output(U,V+1," 
 D+1→D
-Else
 End
-If K=31
-Goto 2
+If K=31:Goto 2
 End
 End
