@@ -5,4 +5,4 @@ https://user-images.githubusercontent.com/85101130/140642298-0cfd66f9-a8d8-458b-
 
 Calcraft is a sandbox game, which means that it integrates "tools" to shape its own game world. Thus, the player can build almost anything he wants. There are different game modes in which the adventure part and the creative part are more or less developed.
 
-For more information https://www.ticraft.be.ma/
+For more information https://ticalcraft.000webhostapp.com or https://www.ticraft.be.ma/
