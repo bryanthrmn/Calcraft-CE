@@ -1,129 +1,82 @@
+::"Calcraft CE
 :DCS
 "888888888888CBBB888888888888CCBB8888888888888CCC88558888888888888555588888888888555555888888888855555588888888888577588888888888887788888888888888778888888888888877888888888888555555588888868855555558888889887777777555555555CCCCCC7777777777DCCECCDCCCCCCFCC"
-0→W
-1→X
-Goto 7
-Lbl 9
-EffÉcran
-If W=0:Output(3,1,"Survie 
-If W=1:Output(3,1,"Créatif
-If X=0:Output(6,1,"Plat  
-If X=1:Output(6,1,"Normal
-Goto 10
-Lbl 10
-Output(2,1,"[1]Mode:
-Output(5,1,"[2]Monde:
-getKey→K
-If K=105:Goto 7
-If K=92 et W=1
-Then
-0→W
-Output(3,1,"Survie 
-Goto 10
-End
-If K=92 et W=0
-Then
-1→W
-Output(3,1,"Créatif
-Goto 10
-End
-If K=93 et X=1
-Then
-Output(6,1,"Plat  
-0→X
-Goto 10
-End
-If K=93 et X=0
-Then
-Output(6,1,"Normal
-1→X
-Goto 10
-End
-Goto 10
+0→W:1→X
 Lbl 7
 EffÉcran
-Wait 0.0
-Output(1,13,"▫
-Output(2,13,"▫
-Wait 0.0
-Output(1,13,"▫
-Output(2,13,"I
-Output(3,13,"▫
-Wait 0.0
-Output(1,12,"▫---▫
-Output(2,12,"I M I
-Output(3,12,"▫---▫
-Wait 0.0
-Output(1,11,"▫-----▫
-Output(2,11,"I MIN I
-Output(3,11,"▫-----▫
-Wait 0.0
-Output(1,10,"▫-------▫
-Output(2,10,"I MINEC I
-Output(3,10,"▫-------▫
-Wait 0.0
-Output(1,9,"▫---------▫
-Output(2,9,"I MINECRA I
-Output(3,9,"▫---------▫
-Wait 0.0
-Output(1,8,"▫-----------▫
-Output(2,8,"I MINECRAFT I
-Output(3,8,"▫-----------▫
-Wait 0.0
-Output(5,8,"[1]Monde solo
-Wait 0.0
-Output(6,8,"[2]Nouvelle map
-Wait 0.0
-Output(7,8,"[3]Options
-Wait 0.0
-Output(8,8,"[4]Quitter
-Wait 0.0
-Output(10,1,"par...
-Wait 0.0
-Output(10,23,"V1.7
-Lbl 8
-getKey→K
-If K=92:Goto WB
-If K=82
-Then
-EffÉcran
-Stop
+"CALCRAFT CE→Chn0
+"--→Chn9
+For(I,1,longueur(Chn0
+13-ent(I10/17→C
+Chn9+"-→Chn9
+Output(1,C,"▫"+Chn9+"▫
+Output(2,C,"| "+sousch(Chn0,1,I)+" |
+Output(3,C,"▫"+Chn9+"▫
+Wait .01
 End
-If K=94:Goto 9
+Output(5,7,"[1] Monde solo
+Wait .1
+Output(6,7,"[2] Nouvelle map
+Wait .1
+Output(7,7,"[3] Options
+Wait .1
+Output(8,7,"[4] Quitter
+Wait .1
+Output(10,1,"Crédits
+Wait .1
+Output(10,23,"V1.7
+Repeat K=92 ou K=93 ou K=94 ou K=82 ou K=11
+getKey→K
+If K=92:Then:Goto WB:End
+If K=93:Then:EffÉcran:Disp "En développement":Pause :Goto 7:End
+If K=82:Then:EffÉcran:Stop:End
+If K=94:Then:Goto 9:End
 If K=15
 Then
 EffÉcran
-Output(1,1,"V1.7 
-Output(3,1,"Correction de bug                                  Rajout de couleur                                   Amelioration du menu"
-Output(10,1,"Annul pour quitter
-While K≠45
-getKey→K
-End
-Goto 7
+Repeat getKey=45 ou getKey=21 ou getKey=105
+{13:prgmTEXTLIB
+Disp "Calcraft CE
+{3:prgmTEXTLIB
+Disp "Version 1.7","Correction de bug","Rajout de couleur","Amelioration du menu"
+Output(10,1,"[Annul] pour quitter
+End:Goto 7
 End
 If K=11
 Then
 EffÉcran
-Output(1,1,"Calcraft CE               
-Output(2,1,"par
-Output(4,1,"Capysquid
-Output(5,1,"Shadow
-Output(6,1,"Oh11115
-Output(9,1,"www.ticraft.be.ma
-Output(10,1,"Annul pour quitter
-While K≠45
+Repeat getKey=45 ou getKey=21 ou getKey=105
+{13:prgmTEXTLIB
+Output(1,1,"Calcraft CE   
+{3:prgmTEXTLIB
+Output(3,5,"Producteurs :
+Output(4,3,"Louis-Ferdiand Stinx
+Output(5,4,"Bryan Thirimanna
+Output(6,5,"Oihan Alsunard
+Output(8,1,"www.ticraft.be.ma
+Output(10,1,"Licence MIT
+End:Goto 7
+End:End
+Lbl 9
+EffÉcran
+Output(2,1,"[1] Mode:
+Output(5,1,"[2] Monde:
+If W=0:Then:Output(3,1,"Survie ":Else:Output(3,1,"Créatif":End
+If X=0:Then:Output(6,1,"Plat  ":Else:Output(6,1,"Normal":End
+Repeat K=105
 getKey→K
+If K=105:Then:Goto 7:End
+If K=92 et W=1:Then:0→W:Output(3,1,"Survie ":End
+If K=92 et W=0:Then:1→W:Output(3,1,"Créatif":End
+If K=93 et X=1:Then:0→X:Output(6,1,"Plat  ":End
+If K=93 et X=0:Then:1→X:Output(6,1,"Normal":End
 End
-Goto 7
-End
-Goto 8
 Lbl WB
 EffÉcran
 0→θ
 Goto 3
 Lbl 2
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 EffÉcran
 Output(2,3,"+-+-+-+
 Output(3,3,"I I I I
@@ -145,35 +98,29 @@ Goto 2
 Else
 If θ=3
 Then
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(3,6,"=
 Output(5,6,"=
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(5,20,"/
 Output(5,22,"*2
 Goto 4
 Else
 If θ=2
 Then
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(5,6,"-
 Output(5,20,"=
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(5,22,"*4
 Goto 4
 Else
 If θ=1
 Then
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(3,6,"=
 Output(5,6,"=
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(7,6,"/
 Output(5,20,"!
 Output(5,22,"*1
@@ -181,14 +128,12 @@ Goto 4
 Else
 If θ=0
 Then
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(7,6,"/
 Output(5,6,"/
 Output(5,20,"T
 Output(5,22,"*1
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(3,4,"=
 Output(3,6,"=
 Output(3,8,"=
@@ -196,11 +141,9 @@ Goto 4
 Else
 If θ=­1
 Then
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(3,6,"=
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(5,6,"/
 Output(7,6,"/
 Output(5,20,"
@@ -209,28 +152,24 @@ Goto 4
 Else
 If θ=­2
 Then
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(5,6,"/
 Output(7,6,"/
 Output(5,22,"*1
 Output(5,20,"τ
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(3,4,"=
 Output(3,6,"=
 Goto 4
 Else
 If θ=­3
 Then
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(5,6,"/
 Output(7,6,"/
 Output(5,20,"P
 Output(5,22,"*1
-{13}
-prgmTEXTLIB
+{13:prgmTEXTLIB
 Output(3,6,"=
 Output(3,4,"=
 Output(5,4,"=
@@ -238,7 +177,7 @@ Goto 4
 Else
 Goto 4
 Lbl 3
-{1,2,3,4}:prgmTEXTLIB
+{1,2,3,4:prgmTEXTLIB
 If X=0:Goto WX
 If X=1:10→A
 9→C
@@ -269,43 +208,39 @@ nbrAléatEnt(18,26)→B
 "                              "→Chn1
 
 EffÉcran
-{14,17,GRIS CLR}:prgmTEXTLIB
+{14,17,GRIS CLR:prgmTEXTLIB
 Output(10,1,"                          
-{14,17,GRIS}:prgmTEXTLIB
+{14,17,GRIS:prgmTEXTLIB
 Output(A,B,"=
 Output(A,L₁(1),"=
 Output(A,L₁(2),"=
 Output(A,L₁(3),"=
-{14,17,MARRON}:prgmTEXTLIB
+{14,17,MARRON:prgmTEXTLIB
 Output(C,J,Chn6
-{14,17,VERT}:prgmTEXTLIB
+{14,17,VERT:prgmTEXTLIB
 Output(C,D,Chn1
 Output(L,I,Chn2
 Output(G,H,Chn3
 Output(F,I,Chn4
-{14,17,MARRON}:prgmTEXTLIB
+{14,17,MARRON:prgmTEXTLIB
 Output(E,S,Chn5
-{1,2,3,4}:prgmTEXTLIB
+{1,2,3,4:prgmTEXTLIB
 D-1→D
 J-1→J
 Lbl WX
 If X=0
 Then
-{14,17,VERT}:prgmTEXTLIB
+{14,17,VERT:prgmTEXTLIB
 Output(10,1,"                          
 26→D
 End
 9→U:1→V
-{1,2,3,4}:prgmTEXTLIB
+{1,2,3,4:prgmTEXTLIB
 While 1
 getKey→K
-{1,2,3,4}:prgmTEXTLIB
+{1,2,3,4:prgmTEXTLIB
 Output(U,V,"Ω
-If K=45
-Then
-EffÉcran
-Stop
-End
+If K=45:Then:EffÉcran:Stop:End
 If K=26 et V<D et V<J:V+1→V
 If K=26 et V>1:Output(U,V-1," 
 If K=24 et V>1:V-1→V
@@ -313,8 +248,7 @@ If K=24 et V>1:Output(U,V+1,"
 If K=24:Output(U,V+1," 
 If K=21 et V=J et V≠26
 Then
-{3}
-prgmTEXTLIB
+{3:prgmTEXTLIB
 Output(U,V+1," 
 26→J
 1→C
